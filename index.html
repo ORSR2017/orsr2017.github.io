@@ -3,33 +3,6 @@
 <html>
   <head>
     
-    <script>
-    var URL = 'https://salvkul4b5.execute-api.us-west-2.amazonaws.com/prod/contact'
- 
-			$('#contact-form').submit(function (event) {
-			  event.preventDefault()
-			 
-			  var data = {
-			    name: $('#name-input').val(),
-			    email: $('#email-input').val(),
-			    description: $('#description-input').val()
-			  }
-			 
-			  $.ajax({
-			    type: 'POST',
-			    url: URL,
-			    dataType: 'json',
-			    contentType: 'application/json',
-			    data: JSON.stringify(data),
-			    success: function () {
-			      // clear form and show a success message
-			    },
-			    error: function () {
-			      // show an error message
-			    }
-			  })
-			})
-    </script>
   </head>
   <body>
     <form id="contact-form">
