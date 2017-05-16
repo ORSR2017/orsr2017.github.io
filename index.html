@@ -2,44 +2,79 @@
 
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script>
-     function submitToAPI() {
-       var URL = ‘https://salvkul4b5.execute-api.us-west-2.amazonaws.com/prod/contact’;
-       var data = {
-         name: $(‘#name-input’).val(),
-         email: $(‘#email-input’).val(),
-         description: $(‘#description-input’).val()
-       };
-       $.ajax({
-         type: ‘POST’,
-         url: URL,
-         dataType: ‘json’,
-         contentType: ‘application/json’,
-         data: JSON.stringify(data),
-         success: function () {
-           // clear form and show a success message
-           alert(‘yay’);
-         },
-         error: function () {
-           // show an error message
-           alert(‘boo’);
-         }
-       });
-     }
+    var URL = 'https://salvkul4b5.execute-api.us-west-2.amazonaws.com/prod/contact'
+ 
+			$('#contact-form').submit(function (event) {
+			  event.preventDefault()
+			 
+			  var data = {
+			    name: $('#name-input').val(),
+			    email: $('#email-input').val(),
+			    description: $('#description-input').val()
+			  }
+			 
+			  $.ajax({
+			    type: 'POST',
+			    url: URL,
+			    dataType: 'json',
+			    contentType: 'application/json',
+			    data: JSON.stringify(data),
+			    success: function () {
+			      // clear form and show a success message
+			    },
+			    error: function () {
+			      // show an error message
+			    }
+			  })
+			})
     </script>
   </head>
   <body>
     <form id="contact-form">
-      <label for="name-input">Name:</label>
-      <input type="text" id="name-input" placeholder="name here…" />
-      <label for="email-input">Email:</label>
-      <input type="email" id="email-input" placeholder="email here…"/>
-      <label for="description-input">How can we help you?</label>
-      <textarea id="description-input" rows="3" placeholder="tell us…"></textarea>
-      <button type="button" onClick="submitToAPI()">Submit</button>
-    </form>
-  </body>
+  <label for="name-input">Name:</label>
+  <input type="text" id="name-input" placeholder="name here..." />
+ 
+  <label for="email-input">Email:</label>
+  <input type="email" id="email-input" placeholder="email here..."/>
+ 
+  <label for="description-input">How can we help you?</label>
+  <textarea id="description-input" rows="3" placeholder="tell us..."></textarea>
+ 
+  <button type="submit">Submit</button>
+</form>
+
+ <script>
+    var URL = 'https://salvkul4b5.execute-api.us-west-2.amazonaws.com/prod/contact'
+ 
+			$('#contact-form').submit(function (event) {
+			  event.preventDefault()
+			 
+			  var data = {
+			    name: $('#name-input').val(),
+			    email: $('#email-input').val(),
+			    description: $('#description-input').val()
+			  }
+			 
+			  $.ajax({
+			    type: 'POST',
+			    url: URL,
+			    dataType: 'json',
+			    contentType: 'application/json',
+			    data: JSON.stringify(data),
+			    success: function () {
+			      // clear form and show a success message
+			    },
+			    error: function () {
+			      // show an error message
+			    }
+			  })
+			})
+    </script>
+
+
+</body>
 </html>
 
 
